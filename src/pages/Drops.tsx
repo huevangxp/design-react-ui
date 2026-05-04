@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import { useTranslation } from '../context/LanguageContext';
 
 export default function Drops() {
   const [activeTab, setActiveTab] = useState('ALL');
+  const { t } = useTranslation();
 
   return (
     <section id="drops" className="flex flex-col gap-10 animate-fade-up select-none">
       <div className="flex flex-col md:flex-row justify-between md:items-center border-b border-[#d3d8e2] dark:border-[#22252a] pb-5 gap-4">
         <div className="font-mono text-sm font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wide flex items-center">
-          <span className="inline-block w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span> // LATEST_RELEASE / [ALL DROPS]
+          <span className="inline-block w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span> // {t('complete_drops')}
         </div>
         <div className="flex gap-2">
           <button 
@@ -16,7 +18,7 @@ export default function Drops() {
             }`} 
             onClick={() => setActiveTab('ALL')}
           >
-            ALL
+            {t('all_drops')}
           </button>
           <button 
             className={`px-4 py-1.5 font-mono text-xs font-semibold cursor-pointer rounded-sm hover:bg-white dark:hover:bg-[#1d2026] hover:text-[#0f1013] dark:hover:text-[#e2e4e9] hover:border-teal-500 dark:hover:border-[#00b4d8] transition-all duration-200 border ${
@@ -24,7 +26,7 @@ export default function Drops() {
             }`} 
             onClick={() => setActiveTab('OUTERWEAR')}
           >
-            OUTERWEAR
+            {t('outerwear')}
           </button>
           <button 
             className={`px-4 py-1.5 font-mono text-xs font-semibold cursor-pointer rounded-sm hover:bg-white dark:hover:bg-[#1d2026] hover:text-[#0f1013] dark:hover:text-[#e2e4e9] hover:border-teal-500 dark:hover:border-[#00b4d8] transition-all duration-200 border ${
@@ -32,7 +34,7 @@ export default function Drops() {
             }`} 
             onClick={() => setActiveTab('FOOTWEAR')}
           >
-            FOOTWEAR
+            {t('footwear')}
           </button>
         </div>
       </div>
