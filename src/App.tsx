@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
+import { LanguageProvider } from './context/LanguageContext'
 import Header from './components/Header'
 import Home from './pages/Home'
 import Drops from './pages/Drops'
 import Archive from './pages/Archive'
 import Info from './pages/Info'
 
-function App() {
+function AppContent() {
   const [currentPage, setCurrentPage] = useState('HOME')
   const [isDarkMode, setIsDarkMode] = useState(true)
 
@@ -62,4 +63,10 @@ function App() {
   )
 }
 
-export default App
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
+  )
+}
