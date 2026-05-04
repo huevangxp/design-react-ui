@@ -37,7 +37,7 @@ export default function Drops() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
         {/* Product 1 */}
         {(activeTab === 'ALL' || activeTab === 'OUTERWEAR') && (
           <div className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] rounded overflow-hidden flex flex-col transition-all duration-300 hover:border-[#5a6270] dark:hover:border-[#8b919d] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.4)] group animate-zoom-in">
