@@ -1,20 +1,53 @@
 interface HeaderProps {
   isDarkMode: boolean;
   setIsDarkMode: (isDark: boolean) => void;
+  currentPage: string;
+  setCurrentPage: (page: string) => void;
 }
 
-export default function Header({ isDarkMode, setIsDarkMode }: HeaderProps) {
+export default function Header({ isDarkMode, setIsDarkMode, currentPage, setCurrentPage }: HeaderProps) {
   return (
     <header className="flex justify-between items-center py-6 border-b border-[#d3d8e2] dark:border-[#22252a] font-mono text-[13px] animate-fade-up">
-      <div className="font-extrabold text-base tracking-tight text-[#0f1013] dark:text-[#e2e4e9] flex items-center gap-2">
+      <div 
+        onClick={() => setCurrentPage('HOME')}
+        className="font-extrabold text-base tracking-tight text-[#0f1013] dark:text-[#e2e4e9] flex items-center gap-2 cursor-pointer select-none hover:scale-105 transition-all duration-200"
+      >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff4d00]"><rect width="8" height="8" x="2" y="2" rx="1"/><rect width="8" height="8" x="14" y="2" rx="1"/><rect width="8" height="8" x="2" y="14" rx="1"/><rect width="8" height="8" x="14" y="14" rx="1"/></svg>
         UTILITY<span className="text-[#ff4d00]">™</span> / D-01
       </div>
       <nav className="hidden md:flex gap-8">
-        <a href="#hero" className="text-[#0f1013] dark:text-[#e2e4e9] hover:text-[#ff4d00] transition-colors duration-200">HOME</a>
-        <a href="#drops" className="text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9] transition-colors duration-200">DROPS</a>
-        <a href="#archive" className="text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9] transition-colors duration-200">ARCHIVE</a>
-        <a href="#info" className="text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9] transition-colors duration-200">INFO</a>
+        <button 
+          onClick={() => setCurrentPage('HOME')} 
+          className={`cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] ${
+            currentPage === 'HOME' ? 'text-[#0f1013] dark:text-[#e2e4e9] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
+          }`}
+        >
+          HOME
+        </button>
+        <button 
+          onClick={() => setCurrentPage('DROPS')} 
+          className={`cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] ${
+            currentPage === 'DROPS' ? 'text-[#0f1013] dark:text-[#e2e4e9] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
+          }`}
+        >
+          DROPS
+        </button>
+        <button 
+          onClick={() => setCurrentPage('ARCHIVE')} 
+          className={`cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] ${
+            currentPage === 'ARCHIVE' ? 'text-[#0f1013] dark:text-[#e2e4e9] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
+          }`}
+        >
+          ARCHIVE
+        </button>
+        <button 
+          onClick={() => setCurrentPage('INFO')} 
+          className={`cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] ${
+            currentPage === 'INFO' ? 'text-[#0f1013] dark:text-[#e2e4e9] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
+          }`}
+        >
+          INFO
+        </button>
       </nav>
       <div className="flex items-center gap-4">
         {/* Theme Toggle Switch */}
