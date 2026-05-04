@@ -1,8 +1,12 @@
+import { useTranslation } from '../context/LanguageContext';
+
 interface HomeProps {
   setCurrentPage: (page: string) => void;
 }
 
 export default function Home({ setCurrentPage }: HomeProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col gap-24 select-none">
       
@@ -11,17 +15,19 @@ export default function Home({ setCurrentPage }: HomeProps) {
         
         {/* Left Content */}
         <div className="flex flex-col gap-8 animate-fade-up [animation-delay:200ms]">
-          <div className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] tracking-widest font-bold">// SS26 NEW DROP // RAW URBAN WEAR</div>
+          <div className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] tracking-widest font-bold">
+            {t('hero_subtitle')}
+          </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-[64px] font-black leading-[1.05] tracking-tight text-[#0f1013] dark:text-[#e2e4e9]">
-            URBAN UTILITY.<br />
-            <span className="text-transparent bg-clip-text [-webkit-text-stroke:1px_#0f1013] dark:[-webkit-text-stroke:1px_#e2e4e9]">FORGED FOR THE COLD.</span>
+            {t('hero_title_1')}<br />
+            <span className="text-transparent bg-clip-text [-webkit-text-stroke:1px_#0f1013] dark:[-webkit-text-stroke:1px_#e2e4e9]">
+              {t('hero_title_2')}
+            </span>
           </h1>
           
           <p className="text-base text-[#5a6270] dark:text-[#8b919d] max-w-[520px] leading-relaxed">
-            ENGINEERED TO WITHSTAND THE ELEMENTS. DROP 01 / SS26 BRINGS REINFORCED
-            TEXTILES, TECHNICAL ACCENTS, AND RAW INDUSTRIAL SILHOUETTES TO THE
-            STREETS. LIMITED QUANTITIES PRODUCED. NEVER RESTOCKED.
+            {t('hero_desc')}
           </p>
           
           <div className="flex gap-4 mt-2">
@@ -29,7 +35,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
               onClick={() => setCurrentPage('DROPS')} 
               className="bg-gradient-to-r from-teal-500 to-cyan-600 dark:from-teal-400 dark:to-cyan-500 text-white cursor-pointer no-underline font-sans font-bold text-sm px-8 py-4 rounded-sm inline-flex items-center gap-2 hover:from-teal-600 hover:to-cyan-700 hover:-translate-y-0.5 transition-all duration-300 shadow-md shadow-teal-500/20"
             >
-              GET THE DROP 
+              {t('get_the_drop')} 
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </button>
             
@@ -37,7 +43,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
               onClick={() => setCurrentPage('ARCHIVE')} 
               className="border border-[#d3d8e2] dark:border-[#22252a] text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer no-underline font-sans font-bold text-sm px-8 py-4 rounded-sm inline-flex items-center hover:bg-white dark:hover:bg-[#1d2026] hover:border-[#5a6270] dark:hover:border-[#8b919d] transition-all duration-200"
             >
-              EXPLORE ARCHIVE
+              {t('explore_archive')}
             </button>
           </div>
 
@@ -46,7 +52,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
               <span className="font-mono text-[11px] text-teal-600 dark:text-[#00b4d8] font-bold">01 /</span>
               <span className="text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wider flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                REINFORCED FABRIC
+                {t('feature_1')}
               </span>
             </div>
             
@@ -54,7 +60,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
               <span className="font-mono text-[11px] text-teal-600 dark:text-[#00b4d8] font-bold">02 /</span>
               <span className="text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wider flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                WATER RESISTANT
+                {t('feature_2')}
               </span>
             </div>
             
@@ -62,7 +68,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
               <span className="font-mono text-[11px] text-teal-600 dark:text-[#00b4d8] font-bold">03 /</span>
               <span className="text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wider flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                REFLECTIVE ACCENTS
+                {t('feature_3')}
               </span>
             </div>
           </div>
@@ -94,17 +100,21 @@ export default function Home({ setCurrentPage }: HomeProps) {
       {/* 02 / Special Promotion Section */}
       <section className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 dark:from-teal-500/5 dark:to-cyan-600/5 border border-teal-500/30 dark:border-teal-500/20 p-8 md:p-12 rounded-sm flex flex-col md:flex-row justify-between items-center gap-8 animate-fade-up">
         <div className="flex flex-col gap-3 max-w-[700px]">
-          <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold tracking-wider">// PROJECT_MEMBERSHIP //</span>
-          <h2 className="text-2xl md:text-3xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight leading-tight">LIMITED ACCELERATOR ACCESS PROMOTION</h2>
+          <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold tracking-wider">
+            {t('promo_subtitle')}
+          </span>
+          <h2 className="text-2xl md:text-3xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight leading-tight">
+            {t('promo_title')}
+          </h2>
           <p className="text-sm text-[#5a6270] dark:text-[#8b919d] leading-relaxed">
-            REGISTER YOUR SYSTEM CREDENTIALS NOW AND ACCESS OUR EXCLUSIVE **SS26 PRE-SALE ENVELOPE**. GET UP TO 20% COMPRESSION PRICE ADJUSTMENTS ON ALL DROPS FOR A LIMITED TIME.
+            {t('promo_desc')}
           </p>
         </div>
         <button 
           onClick={() => setCurrentPage('INFO')} 
           className="bg-white dark:bg-[#14161b] text-teal-600 dark:text-[#00b4d8] border border-teal-500/40 dark:border-teal-500/30 font-mono text-xs font-bold px-8 py-4 cursor-pointer hover:bg-teal-500 hover:text-white dark:hover:bg-teal-400 dark:hover:text-black transition-all duration-300 rounded-sm flex items-center gap-2 tracking-wide flex-shrink-0"
         >
-          APPLY CREDENTIALS
+          {t('promo_btn')}
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </button>
       </section>
@@ -113,13 +123,13 @@ export default function Home({ setCurrentPage }: HomeProps) {
       <section className="flex flex-col gap-10 animate-fade-up">
         <div className="flex flex-col md:flex-row justify-between md:items-center border-b border-[#d3d8e2] dark:border-[#22252a] pb-5 gap-4">
           <div className="font-mono text-sm font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wide flex items-center">
-            <span className="inline-block w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span> // PREMIUM_PRODUCT_HIGHLIGHT
+            <span className="inline-block w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span> // {t('product_highlight')}
           </div>
           <button 
             onClick={() => setCurrentPage('DROPS')} 
             className="font-mono text-xs font-bold text-teal-600 dark:text-[#00b4d8] border-b border-dashed border-teal-500/40 hover:text-teal-700 dark:hover:text-[#0077b6] cursor-pointer transition-colors duration-200 bg-transparent"
           >
-            EXPLORE COMPLETE DROPS
+            {t('complete_drops')}
           </button>
         </div>
 
@@ -147,7 +157,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
                   onClick={() => setCurrentPage('DROPS')} 
                   className="bg-transparent border-none font-mono text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] hover:text-teal-500 cursor-pointer transition-colors duration-200"
                 >
-                  ACQUIRE_ITEM
+                  {t('acquire_item')}
                 </button>
               </div>
             </div>
@@ -176,7 +186,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
                   onClick={() => setCurrentPage('DROPS')} 
                   className="bg-transparent border-none font-mono text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] hover:text-teal-500 cursor-pointer transition-colors duration-200"
                 >
-                  ACQUIRE_ITEM
+                  {t('acquire_item')}
                 </button>
               </div>
             </div>
@@ -190,34 +200,38 @@ export default function Home({ setCurrentPage }: HomeProps) {
         {/* Contact Directive Form */}
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">// REACH_COMMUNICATIONS</span>
-            <h3 className="text-2xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">CONTACT PROJECT_DIRECT</h3>
+            <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">
+              {t('contact_subtitle')}
+            </span>
+            <h3 className="text-2xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">
+              {t('contact_title')}
+            </h3>
             <p className="text-sm text-[#5a6270] dark:text-[#8b919d] max-w-[480px]">
-              SUBMIT SYSTEM REQUESTS OR INQUIRIES. AN OPERATIVE WILL TRANSMIT FEEDBACK TO YOUR NETWORK CONSOLE AS SOON AS POSSIBLE.
+              {t('contact_desc')}
             </p>
           </div>
 
           <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
             <input 
               type="text" 
-              placeholder="ENTER NAME / CREDENTIALS" 
+              placeholder={t('full_name')}
               className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
             />
             <input 
               type="email" 
-              placeholder="ENTER NETWORK EMAIL" 
+              placeholder={t('email')}
               className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
             />
             <textarea 
               rows={3} 
-              placeholder="MESSAGE CONTENT" 
+              placeholder={t('message')}
               className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm resize-none transition-all duration-200"
             ></textarea>
             <button 
               type="button" 
               className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-mono text-xs font-bold px-6 py-3.5 rounded-sm self-start cursor-pointer hover:from-teal-600 hover:to-cyan-700 transition-all duration-200 shadow-md shadow-teal-500/20"
             >
-              TRANSMIT_INQUIRY
+              {t('transmit')}
             </button>
           </form>
         </div>
@@ -227,7 +241,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1.5 border-b border-[#d3d8e2] dark:border-[#22252a] pb-4">
               <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">// SYSTEM DIRECTORY</span>
-              <h3 className="text-xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">BRAND CORE SPECIFICATIONS</h3>
+              <h3 className="text-xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">{t('directives_title')}</h3>
             </div>
             
             <p className="text-[#5a6270] dark:text-[#8b919d] text-sm leading-relaxed mb-1">
@@ -236,11 +250,11 @@ export default function Home({ setCurrentPage }: HomeProps) {
 
             <div className="flex flex-col gap-3 font-mono text-xs">
               <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
-                <span className="text-[#5a6270] dark:text-[#8b919d]">SYSTEM VERSION:</span>
+                <span className="text-[#5a6270] dark:text-[#8b919d]">{t('system_version')}</span>
                 <span className="text-[#0f1013] dark:text-[#e2e4e9] font-bold">1.0.4 // LATEST</span>
               </div>
               <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
-                <span className="text-[#5a6270] dark:text-[#8b919d]">HQ_LOCATION:</span>
+                <span className="text-[#5a6270] dark:text-[#8b919d]">{t('office')}</span>
                 <span className="text-[#0f1013] dark:text-[#e2e4e9] font-bold">TOKYO // CENTRAL STATION</span>
               </div>
               <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
