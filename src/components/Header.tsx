@@ -1,3 +1,5 @@
+import { useTranslation } from '../context/LanguageContext';
+
 interface HeaderProps {
   isDarkMode: boolean;
   setIsDarkMode: (isDark: boolean) => void;
@@ -6,6 +8,8 @@ interface HeaderProps {
 }
 
 export default function Header({ isDarkMode, setIsDarkMode, currentPage, setCurrentPage }: HeaderProps) {
+  const { language, setLanguage, t } = useTranslation();
+
   return (
     <header className="flex justify-between items-center py-6 border-b border-[#d3d8e2] dark:border-[#22252a] font-mono text-[13px] animate-fade-up">
       <div 
@@ -22,7 +26,7 @@ export default function Header({ isDarkMode, setIsDarkMode, currentPage, setCurr
             currentPage === 'HOME' ? 'text-teal-600 dark:text-[#00b4d8] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
           }`}
         >
-          HOME
+          {t('home')}
         </button>
         <button 
           onClick={() => setCurrentPage('DROPS')} 
@@ -30,7 +34,7 @@ export default function Header({ isDarkMode, setIsDarkMode, currentPage, setCurr
             currentPage === 'DROPS' ? 'text-teal-600 dark:text-[#00b4d8] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
           }`}
         >
-          DROPS
+          {t('drops')}
         </button>
         <button 
           onClick={() => setCurrentPage('ARCHIVE')} 
@@ -38,7 +42,7 @@ export default function Header({ isDarkMode, setIsDarkMode, currentPage, setCurr
             currentPage === 'ARCHIVE' ? 'text-teal-600 dark:text-[#00b4d8] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
           }`}
         >
-          ARCHIVE
+          {t('archive')}
         </button>
         <button 
           onClick={() => setCurrentPage('INFO')} 
@@ -46,10 +50,19 @@ export default function Header({ isDarkMode, setIsDarkMode, currentPage, setCurr
             currentPage === 'INFO' ? 'text-teal-600 dark:text-[#00b4d8] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
           }`}
         >
-          INFO
+          {t('info')}
         </button>
       </nav>
       <div className="flex items-center gap-4">
+        {/* Language Switch Button */}
+        <button 
+          onClick={() => setLanguage(language === 'lo' ? 'en' : 'lo')}
+          className="px-3 py-1.5 border border-[#d3d8e2] dark:border-[#22252a] bg-white dark:bg-[#1d2026] hover:bg-[#e6e9ef] dark:hover:bg-[#2c313d] text-[#0f1013] dark:text-[#e2e4e9] font-mono text-xs font-bold cursor-pointer transition-all duration-200 flex items-center justify-center hover:scale-105 rounded-sm select-none"
+          title={language === 'lo' ? "Switch to English" : "Switch to Lao"}
+        >
+          {language === 'lo' ? 'LO' : 'EN'}
+        </button>
+
         {/* Theme Toggle Switch */}
         <button 
           onClick={() => setIsDarkMode(!isDarkMode)}
@@ -64,10 +77,12 @@ export default function Header({ isDarkMode, setIsDarkMode, currentPage, setCurr
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
           )}
         </button>
-        <span className="text-teal-600 dark:text-[#00b4d8] font-bold hidden sm:inline">STATUS: ACTIVE</span>
+        <span className="text-teal-600 dark:text-[#00b4d8] font-bold hidden sm:inline select-none">
+          {t('status_active')}
+        </span>
         <button className="bg-white dark:bg-[#1d2026] border border-[#d3d8e2] dark:border-[#22252a] text-[#0f1013] dark:text-[#e2e4e9] px-4 py-2 font-mono text-[13px] font-semibold cursor-pointer rounded-sm hover:bg-[#e6e9ef] dark:hover:bg-[#22252a] hover:border-[#5a6270] dark:hover:border-[#8b919d] transition-all duration-200 flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-          CART <span className="text-teal-500">[0]</span>
+          {t('cart')} <span className="text-teal-500">[0]</span>
         </button>
       </div>
     </header>
