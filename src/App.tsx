@@ -2,12 +2,8 @@ import { useState, useEffect } from 'react'
 import { LanguageProvider } from './context/LanguageContext'
 import Header from './components/Header'
 import Home from './pages/Home'
-import Drops from './pages/Drops'
-import Archive from './pages/Archive'
-import Info from './pages/Info'
 
 function AppContent() {
-  const [currentPage, setCurrentPage] = useState('HOME')
   const [isDarkMode, setIsDarkMode] = useState(true)
 
   // Manage Dark/Light mode theme
@@ -19,6 +15,13 @@ function AppContent() {
     }
   }, [isDarkMode])
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="bg-[#f4f5f7] dark:bg-[#0c0d10] text-[#0f1013] dark:text-[#e2e4e9] font-sans antialiased tracking-tight min-h-screen transition-colors duration-300 selection:bg-teal-500 selection:text-white pb-16">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10 flex flex-col gap-12 lg:gap-20">
@@ -27,16 +30,11 @@ function AppContent() {
         <Header 
           isDarkMode={isDarkMode} 
           setIsDarkMode={setIsDarkMode} 
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
         />
 
-        {/* Dynamic Multi-Page Component Routing */}
+        {/* Home Landing Page Content */}
         <main className="min-h-[50vh]">
-          {currentPage === 'HOME' && <Home setCurrentPage={setCurrentPage} />}
-          {currentPage === 'DROPS' && <Drops />}
-          {currentPage === 'ARCHIVE' && <Archive setCurrentPage={setCurrentPage} />}
-          {currentPage === 'INFO' && <Info />}
+          <Home />
         </main>
 
         {/* Technical Footer */}
@@ -47,10 +45,10 @@ function AppContent() {
               UTILITY™ <span className="text-[#5a6270] dark:text-[#8b919d] font-light">/ EST. 2026</span>
             </div>
             <div className="flex gap-6">
-              <button onClick={() => setCurrentPage('HOME')} className="text-[#5a6270] dark:text-[#8b919d] bg-transparent border-none cursor-pointer hover:text-teal-600 dark:hover:text-[#00b4d8] transition-colors duration-200">ABOUT</button>
-              <button onClick={() => setCurrentPage('INFO')} className="text-[#5a6270] dark:text-[#8b919d] bg-transparent border-none cursor-pointer hover:text-teal-600 dark:hover:text-[#00b4d8] transition-colors duration-200">TERMS</button>
-              <button onClick={() => setCurrentPage('INFO')} className="text-[#5a6270] dark:text-[#8b919d] bg-transparent border-none cursor-pointer hover:text-teal-600 dark:hover:text-[#00b4d8] transition-colors duration-200">PRIVACY</button>
-              <button onClick={() => setCurrentPage('INFO')} className="text-[#5a6270] dark:text-[#8b919d] bg-transparent border-none cursor-pointer hover:text-teal-600 dark:hover:text-[#00b4d8] transition-colors duration-200">SUPPORT</button>
+              <button onClick={() => scrollToSection('archive')} className="text-[#5a6270] dark:text-[#8b919d] bg-transparent border-none cursor-pointer hover:text-teal-600 dark:hover:text-[#00b4d8] transition-colors duration-200">ABOUT</button>
+              <button onClick={() => scrollToSection('info')} className="text-[#5a6270] dark:text-[#8b919d] bg-transparent border-none cursor-pointer hover:text-teal-600 dark:hover:text-[#00b4d8] transition-colors duration-200">TERMS</button>
+              <button onClick={() => scrollToSection('info')} className="text-[#5a6270] dark:text-[#8b919d] bg-transparent border-none cursor-pointer hover:text-teal-600 dark:hover:text-[#00b4d8] transition-colors duration-200">PRIVACY</button>
+              <button onClick={() => scrollToSection('info')} className="text-[#5a6270] dark:text-[#8b919d] bg-transparent border-none cursor-pointer hover:text-teal-600 dark:hover:text-[#00b4d8] transition-colors duration-200">SUPPORT</button>
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between text-[#5a6270] dark:text-[#8b919d] gap-3">
