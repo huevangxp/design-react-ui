@@ -26,9 +26,9 @@ export default function Home() {
             {t('hero_subtitle')}
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-[64px] font-black leading-[1.05] tracking-tight text-[#0f1013] dark:text-[#e2e4e9]">
+          <h1 className="text-4xl md:text-5xl lg:text-[64px] font-black leading-[1.05] tracking-tight text-black dark:text-white">
             {t('hero_title_1')}<br />
-            <span className="text-transparent bg-clip-text [-webkit-text-stroke:1px_#0f1013] dark:[-webkit-text-stroke:1px_#e2e4e9]">
+            <span className="text-transparent bg-clip-text [-webkit-text-stroke:1px_#000000] dark:[-webkit-text-stroke:1px_#ffffff]">
               {t('hero_title_2')}
             </span>
           </h1>
@@ -48,7 +48,7 @@ export default function Home() {
             
             <button 
               onClick={() => scrollToSection('archive')} 
-              className="border border-zinc-200 dark:border-[#22252a] text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer no-underline font-sans font-bold text-sm px-8 py-4 rounded-sm inline-flex items-center hover:bg-[#f8fafc] dark:hover:bg-[#1d2026] hover:border-[#5a6270] dark:hover:border-[#8b919d] transition-all duration-200"
+              className="border border-zinc-200 dark:border-[#22252a] text-black dark:text-white cursor-pointer no-underline font-sans font-bold text-sm px-8 py-4 rounded-sm inline-flex items-center hover:bg-[#f8fafc] dark:hover:bg-[#1d2026] hover:border-[#5a6270] dark:hover:border-[#8b919d] transition-all duration-200"
             >
               {t('explore_archive')}
             </button>
@@ -57,7 +57,7 @@ export default function Home() {
           <div className="flex gap-8 mt-4 border-t border-zinc-200 dark:border-[#22252a] pt-8">
             <div className="flex flex-col gap-2">
               <span className="font-mono text-[11px] text-teal-600 dark:text-[#00b4d8] font-bold">01 /</span>
-              <span className="text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wider flex items-center gap-1.5">
+              <span className="text-xs font-bold text-black dark:text-white tracking-wider flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
                 {t('feature_1')}
               </span>
@@ -65,7 +65,7 @@ export default function Home() {
             
             <div className="flex flex-col gap-2">
               <span className="font-mono text-[11px] text-teal-600 dark:text-[#00b4d8] font-bold">02 /</span>
-              <span className="text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wider flex items-center gap-1.5">
+              <span className="text-xs font-bold text-black dark:text-white tracking-wider flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
                 {t('feature_2')}
               </span>
@@ -73,7 +73,7 @@ export default function Home() {
             
             <div className="flex flex-col gap-2">
               <span className="font-mono text-[11px] text-teal-600 dark:text-[#00b4d8] font-bold">03 /</span>
-              <span className="text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wider flex items-center gap-1.5">
+              <span className="text-xs font-bold text-black dark:text-white tracking-wider flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
                 {t('feature_3')}
               </span>
@@ -110,7 +110,7 @@ export default function Home() {
           <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold tracking-wider">
             {t('promo_subtitle')}
           </span>
-          <h2 className="text-2xl md:text-3xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight leading-tight">
+          <h2 className="text-2xl md:text-3xl font-black text-black dark:text-white tracking-tight leading-tight">
             {t('promo_title')}
           </h2>
           <p className="text-sm text-[#5a6270] dark:text-[#8b919d] leading-relaxed">
@@ -129,7 +129,7 @@ export default function Home() {
       {/* 03 / Product Mini Grid Detail Card */}
       <section id="drops" className="flex flex-col gap-10 animate-fade-up">
         <div className="flex flex-col md:flex-row justify-between md:items-center border-b border-zinc-200 dark:border-[#22252a] pb-5 gap-4">
-          <div className="font-mono text-sm font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wide flex items-center">
+          <div className="font-mono text-sm font-bold text-black dark:text-white tracking-wide flex items-center">
             <span className="inline-block w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span> // {t('product_highlight')}
           </div>
           <button 
@@ -153,7 +153,7 @@ export default function Home() {
             <div className="flex flex-col justify-between flex-grow gap-4">
               <div className="flex flex-col gap-2">
                 <div className="font-mono text-[10px] text-teal-600 dark:text-[#00b4d8] font-bold">// FOOTWEAR</div>
-                <h3 className="text-xl font-bold tracking-tight text-[#0f1013] dark:text-[#e2e4e9]">TERRAIN FORCE SNEAKERS</h3>
+                <h3 className="text-xl font-bold tracking-tight text-black dark:text-white">TERRAIN FORCE SNEAKERS</h3>
                 <p className="text-xs text-[#5a6270] dark:text-[#8b919d] leading-relaxed max-w-[340px]">
                   RUGGED OFF-GRID TRAIL SNEAKER DESIGNED WITH AN OVERSIZED VIBRAM OUTSOLE AND TECHNICAL PULL ACCENTS.
                 </p>
@@ -162,7 +162,7 @@ export default function Home() {
                 <span className="font-mono text-sm font-bold text-teal-600 dark:text-[#00b4d8]">$195.00</span>
                 <button 
                   onClick={() => scrollToSection('info')} 
-                  className="bg-transparent border-none font-mono text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] hover:text-teal-500 cursor-pointer transition-colors duration-200"
+                  className="bg-transparent border-none font-mono text-xs font-bold text-black dark:text-white hover:text-teal-500 cursor-pointer transition-colors duration-200"
                 >
                   {t('acquire_item')}
                 </button>
@@ -182,7 +182,7 @@ export default function Home() {
             <div className="flex flex-col justify-between flex-grow gap-4">
               <div className="flex flex-col gap-2">
                 <div className="font-mono text-[10px] text-teal-600 dark:text-[#00b4d8] font-bold">// OUTERWEAR</div>
-                <h3 className="text-xl font-bold tracking-tight text-[#0f1013] dark:text-[#e2e4e9]">MODULAR UTILITY JACKET</h3>
+                <h3 className="text-xl font-bold tracking-tight text-black dark:text-white">MODULAR UTILITY JACKET</h3>
                 <p className="text-xs text-[#5a6270] dark:text-[#8b919d] leading-relaxed max-w-[340px]">
                   WATER RESISTANT COATING COMPLETE WITH INDUSTRIAL SLING ATTACHMENTS AND 4 ZIP COMPARTMENTS.
                 </p>
@@ -191,7 +191,7 @@ export default function Home() {
                 <span className="font-mono text-sm font-bold text-teal-600 dark:text-[#00b4d8]">$220.00</span>
                 <button 
                   onClick={() => scrollToSection('info')} 
-                  className="bg-transparent border-none font-mono text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] hover:text-teal-500 cursor-pointer transition-colors duration-200"
+                  className="bg-transparent border-none font-mono text-xs font-bold text-black dark:text-white hover:text-teal-500 cursor-pointer transition-colors duration-200"
                 >
                   {t('acquire_item')}
                 </button>
@@ -209,13 +209,13 @@ export default function Home() {
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2H2v10h10V2Z"/><path d="m16 12 4-4-4-4"/><path d="M20 8H8"/></svg>
               {t('core_philosophy')}
             </span>
-            <h2 className="text-[32px] font-black leading-tight tracking-tight text-[#0f1013] dark:text-[#e2e4e9]">
+            <h2 className="text-[32px] font-black leading-tight tracking-tight text-black dark:text-white">
               {t('archive_title')}
             </h2>
             <p className="text-[#5a6270] dark:text-[#8b919d] text-[15px] leading-relaxed">
               {t('archive_desc')}
             </p>
-            <button onClick={() => scrollToSection('drops')} className="font-mono text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer text-xs font-bold no-underline border-b border-dashed border-zinc-200 dark:border-[#22252a] pb-0.5 self-start hover:text-teal-600 hover:border-teal-500 dark:hover:text-[#00b4d8] dark:hover:border-[#00b4d8] transition-all duration-200 bg-transparent">
+            <button onClick={() => scrollToSection('drops')} className="font-mono text-black dark:text-white cursor-pointer text-xs font-bold no-underline border-b border-dashed border-zinc-200 dark:border-[#22252a] pb-0.5 self-start hover:text-teal-600 hover:border-teal-500 dark:hover:text-[#00b4d8] dark:hover:border-[#00b4d8] transition-all duration-200 bg-transparent">
               {t('learn_more')}
             </button>
           </div>
@@ -235,7 +235,7 @@ export default function Home() {
           <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">
             {t('specs_subtitle')}
           </span>
-          <h3 className="text-2xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">
+          <h3 className="text-2xl font-black text-black dark:text-white tracking-tight">
             {t('technical_info')}
           </h3>
         </div>
@@ -270,7 +270,7 @@ export default function Home() {
               <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">
                 {t('contact_subtitle')}
               </span>
-              <h3 className="text-2xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">
+              <h3 className="text-2xl font-black text-black dark:text-white tracking-tight">
                 {t('contact_title')}
               </h3>
               <p className="text-sm text-[#5a6270] dark:text-[#8b919d] leading-relaxed">
@@ -282,17 +282,17 @@ export default function Home() {
               <input 
                 type="text" 
                 placeholder={t('full_name')}
-                className="bg-zinc-50/50 focus:bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
+                className="bg-zinc-50/50 focus:bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-black dark:text-white rounded-sm transition-all duration-200"
               />
               <input 
                 type="email" 
                 placeholder={t('email')}
-                className="bg-zinc-50/50 focus:bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
+                className="bg-zinc-50/50 focus:bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-black dark:text-white rounded-sm transition-all duration-200"
               />
               <textarea 
                 rows={3} 
                 placeholder={t('message')}
-                className="bg-zinc-50/50 focus:bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm resize-none transition-all duration-200"
+                className="bg-zinc-50/50 focus:bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-black dark:text-white rounded-sm resize-none transition-all duration-200"
               ></textarea>
               <button 
                 type="button" 
@@ -308,7 +308,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-1.5 border-b border-zinc-200 dark:border-[#22252a] pb-4">
                 <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">// SYSTEM DIRECTORY</span>
-                <h3 className="text-xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">{t('directives_title')}</h3>
+                <h3 className="text-xl font-black text-black dark:text-white tracking-tight">{t('directives_title')}</h3>
               </div>
               
               <p className="text-[#5a6270] dark:text-[#8b919d] text-sm leading-relaxed mb-1">
@@ -318,11 +318,11 @@ export default function Home() {
               <div className="flex flex-col gap-3 font-mono text-xs">
                 <div className="flex justify-between items-center border-b border-dashed border-zinc-200 dark:border-[#1d2026] pb-2.5">
                   <span className="text-[#5a6270] dark:text-[#8b919d]">{t('system_version')}</span>
-                  <span className="text-[#0f1013] dark:text-[#e2e4e9] font-bold">1.0.4 // LATEST</span>
+                  <span className="text-black dark:text-white font-bold">1.0.4 // LATEST</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-dashed border-zinc-200 dark:border-[#1d2026] pb-2.5">
                   <span className="text-[#5a6270] dark:text-[#8b919d]">{t('office')}</span>
-                  <span className="text-[#0f1013] dark:text-[#e2e4e9] font-bold">TOKYO // CENTRAL STATION</span>
+                  <span className="text-black dark:text-white font-bold">TOKYO // CENTRAL STATION</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-dashed border-zinc-200 dark:border-[#1d2026] pb-2.5">
                   <span className="text-[#5a6270] dark:text-[#8b919d]">PROJECT EMAIL:</span>
@@ -338,7 +338,7 @@ export default function Home() {
 
             <button 
               onClick={() => scrollToSection('hero')} 
-              className="font-mono text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer text-xs font-bold no-underline border-b border-dashed border-zinc-200 dark:border-[#22252a] pb-0.5 self-start hover:text-teal-500 hover:border-teal-500 transition-all duration-200 mt-4"
+              className="font-mono text-black dark:text-white cursor-pointer text-xs font-bold no-underline border-b border-dashed border-zinc-200 dark:border-[#22252a] pb-0.5 self-start hover:text-teal-500 hover:border-teal-500 transition-all duration-200 mt-4"
             >
               BACK TO SYSTEM START ↑
             </button>
