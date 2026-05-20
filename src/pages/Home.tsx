@@ -1,11 +1,18 @@
 import { useTranslation } from '../context/LanguageContext';
 
-interface HomeProps {
-  setCurrentPage: (page: string) => void;
-}
-
-export default function Home({ setCurrentPage }: HomeProps) {
+export default function Home() {
   const { t } = useTranslation();
+
+  const scrollToSection = (id: string) => {
+    if (id === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <div className="flex flex-col gap-24 select-none">
@@ -32,7 +39,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
           
           <div className="flex gap-4 mt-2">
             <button 
-              onClick={() => setCurrentPage('DROPS')} 
+              onClick={() => scrollToSection('drops')} 
               className="bg-gradient-to-r from-teal-500 to-cyan-600 dark:from-teal-400 dark:to-cyan-500 text-white cursor-pointer no-underline font-sans font-bold text-sm px-8 py-4 rounded-sm inline-flex items-center gap-2 hover:from-teal-600 hover:to-cyan-700 hover:-translate-y-0.5 transition-all duration-300 shadow-md shadow-teal-500/20"
             >
               {t('get_the_drop')} 
@@ -40,7 +47,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
             </button>
             
             <button 
-              onClick={() => setCurrentPage('ARCHIVE')} 
+              onClick={() => scrollToSection('archive')} 
               className="border border-[#d3d8e2] dark:border-[#22252a] text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer no-underline font-sans font-bold text-sm px-8 py-4 rounded-sm inline-flex items-center hover:bg-white dark:hover:bg-[#1d2026] hover:border-[#5a6270] dark:hover:border-[#8b919d] transition-all duration-200"
             >
               {t('explore_archive')}
@@ -111,7 +118,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
           </p>
         </div>
         <button 
-          onClick={() => setCurrentPage('INFO')} 
+          onClick={() => scrollToSection('info')} 
           className="bg-white dark:bg-[#14161b] text-teal-600 dark:text-[#00b4d8] border border-teal-500/40 dark:border-teal-500/30 font-mono text-xs font-bold px-8 py-4 cursor-pointer hover:bg-teal-500 hover:text-white dark:hover:bg-teal-400 dark:hover:text-black transition-all duration-300 rounded-sm flex items-center gap-2 tracking-wide flex-shrink-0"
         >
           {t('promo_btn')}
@@ -120,13 +127,13 @@ export default function Home({ setCurrentPage }: HomeProps) {
       </section>
 
       {/* 03 / Product Mini Grid Detail Card */}
-      <section className="flex flex-col gap-10 animate-fade-up">
+      <section id="drops" className="flex flex-col gap-10 animate-fade-up">
         <div className="flex flex-col md:flex-row justify-between md:items-center border-b border-[#d3d8e2] dark:border-[#22252a] pb-5 gap-4">
           <div className="font-mono text-sm font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wide flex items-center">
             <span className="inline-block w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span> // {t('product_highlight')}
           </div>
           <button 
-            onClick={() => setCurrentPage('DROPS')} 
+            onClick={() => scrollToSection('drops')} 
             className="font-mono text-xs font-bold text-teal-600 dark:text-[#00b4d8] border-b border-dashed border-teal-500/40 hover:text-teal-700 dark:hover:text-[#0077b6] cursor-pointer transition-colors duration-200 bg-transparent"
           >
             {t('complete_drops')}
@@ -154,7 +161,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
               <div className="flex justify-between items-center border-t border-[#d3d8e2] dark:border-[#22252a] pt-3">
                 <span className="font-mono text-sm font-bold text-teal-600 dark:text-[#00b4d8]">$195.00</span>
                 <button 
-                  onClick={() => setCurrentPage('DROPS')} 
+                  onClick={() => scrollToSection('info')} 
                   className="bg-transparent border-none font-mono text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] hover:text-teal-500 cursor-pointer transition-colors duration-200"
                 >
                   {t('acquire_item')}
@@ -183,7 +190,7 @@ export default function Home({ setCurrentPage }: HomeProps) {
               <div className="flex justify-between items-center border-t border-[#d3d8e2] dark:border-[#22252a] pt-3">
                 <span className="font-mono text-sm font-bold text-teal-600 dark:text-[#00b4d8]">$220.00</span>
                 <button 
-                  onClick={() => setCurrentPage('DROPS')} 
+                  onClick={() => scrollToSection('info')} 
                   className="bg-transparent border-none font-mono text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] hover:text-teal-500 cursor-pointer transition-colors duration-200"
                 >
                   {t('acquire_item')}
@@ -194,82 +201,143 @@ export default function Home({ setCurrentPage }: HomeProps) {
         </div>
       </section>
 
-      {/* 04 / Core Info & Contact Layout */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-[#d3d8e2] dark:border-[#22252a] pt-16 animate-fade-up">
-        
-        {/* Contact Directive Form */}
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-2">
-            <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">
-              {t('contact_subtitle')}
+      {/* 03.5 / Archive Section */}
+      <section id="archive" className="border-t border-b border-[#d3d8e2] dark:border-[#22252a] py-16 animate-fade-up select-none">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center">
+          <div className="flex flex-col gap-5">
+            <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold tracking-wider flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2H2v10h10V2Z"/><path d="m16 12 4-4-4-4"/><path d="M20 8H8"/></svg>
+              {t('core_philosophy')}
             </span>
-            <h3 className="text-2xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">
-              {t('contact_title')}
-            </h3>
-            <p className="text-sm text-[#5a6270] dark:text-[#8b919d] max-w-[480px]">
-              {t('contact_desc')}
+            <h2 className="text-[32px] font-black leading-tight tracking-tight text-[#0f1013] dark:text-[#e2e4e9]">
+              {t('archive_title')}
+            </h2>
+            <p className="text-[#5a6270] dark:text-[#8b919d] text-[15px] leading-relaxed">
+              {t('archive_desc')}
             </p>
-          </div>
-
-          <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
-            <input 
-              type="text" 
-              placeholder={t('full_name')}
-              className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
-            />
-            <input 
-              type="email" 
-              placeholder={t('email')}
-              className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
-            />
-            <textarea 
-              rows={3} 
-              placeholder={t('message')}
-              className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm resize-none transition-all duration-200"
-            ></textarea>
-            <button 
-              type="button" 
-              className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-mono text-xs font-bold px-6 py-3.5 rounded-sm self-start cursor-pointer hover:from-teal-600 hover:to-cyan-700 transition-all duration-200 shadow-md shadow-teal-500/20"
-            >
-              {t('transmit')}
+            <button onClick={() => scrollToSection('drops')} className="font-mono text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer text-xs font-bold no-underline border-b border-dashed border-[#d3d8e2] dark:border-[#22252a] pb-0.5 self-start hover:text-teal-600 hover:border-teal-500 dark:hover:text-[#00b4d8] dark:hover:border-[#00b4d8] transition-all duration-200 bg-transparent">
+              {t('learn_more')}
             </button>
-          </form>
+          </div>
+          <div className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-4 animate-zoom-in [animation-delay:200ms]">
+            <img 
+              src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80" 
+              alt="Urban Architecture / Street Style" 
+              className="w-full aspect-square md:aspect-video object-cover block"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 04 / FAQ & System Specs Section */}
+      <section id="info" className="flex flex-col gap-12 animate-fade-up">
+        <div className="flex flex-col gap-2">
+          <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">
+            {t('specs_subtitle')}
+          </span>
+          <h3 className="text-2xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">
+            {t('technical_info')}
+          </h3>
         </div>
 
-        {/* Brand System Info & Credentials */}
-        <div className="flex flex-col gap-6 bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-8 rounded-sm select-text hover:border-[#5a6270] dark:hover:border-[#8b919d] transition-all duration-200 justify-between">
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col gap-1.5 border-b border-[#d3d8e2] dark:border-[#22252a] pb-4">
-              <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">// SYSTEM DIRECTORY</span>
-              <h3 className="text-xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">{t('directives_title')}</h3>
-            </div>
-            
-            <p className="text-[#5a6270] dark:text-[#8b919d] text-sm leading-relaxed mb-1">
-              THE BRAND OFFERS AN ARRAY OF TECHNICAL PIECES MEANT TO REDEFINE HIGH CONTRAST SILHOUETTES. EACH PIECE GOES THROUGH RAW TEXTILE FABRICATION.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-6 hover:border-teal-500/50 transition-all duration-200 rounded-sm">
+            <h4 className="font-mono font-bold text-sm text-teal-600 dark:text-[#00b4d8] mb-2 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              {t('faq_1_q')}
+            </h4>
+            <p className="text-[#5a6270] dark:text-[#8b919d] text-sm leading-relaxed">
+              {t('faq_1_a')}
             </p>
-
-            <div className="flex flex-col gap-3 font-mono text-xs">
-              <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
-                <span className="text-[#5a6270] dark:text-[#8b919d]">{t('system_version')}</span>
-                <span className="text-[#0f1013] dark:text-[#e2e4e9] font-bold">1.0.4 // LATEST</span>
-              </div>
-              <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
-                <span className="text-[#5a6270] dark:text-[#8b919d]">{t('office')}</span>
-                <span className="text-[#0f1013] dark:text-[#e2e4e9] font-bold">TOKYO // CENTRAL STATION</span>
-              </div>
-              <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
-                <span className="text-[#5a6270] dark:text-[#8b919d]">PROJECT EMAIL:</span>
-                <span className="text-teal-600 dark:text-[#00b4d8] font-bold">support@utility.tm</span>
-              </div>
-            </div>
           </div>
 
-          <button 
-            onClick={() => setCurrentPage('INFO')} 
-            className="font-mono text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer text-xs font-bold no-underline border-b border-dashed border-[#d3d8e2] dark:border-[#22252a] pb-0.5 self-start hover:text-teal-500 hover:border-teal-500 transition-all duration-200 mt-4"
-          >
-            SEE ALL SYSTEM DETAILS →
-          </button>
+          <div className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-6 hover:border-teal-500/50 transition-all duration-200 rounded-sm">
+            <h4 className="font-mono font-bold text-sm text-teal-600 dark:text-[#00b4d8] mb-2 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              {t('faq_2_q')}
+            </h4>
+            <p className="text-[#5a6270] dark:text-[#8b919d] text-sm leading-relaxed">
+              {t('faq_2_a')}
+            </p>
+          </div>
+        </div>
+
+        {/* Contact form & Credentials */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-[#d3d8e2]/60 dark:border-[#22252a]/60 pt-12">
+          {/* Contact Directive Form */}
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-2">
+              <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">
+                {t('contact_subtitle')}
+              </span>
+              <h3 className="text-2xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">
+                {t('contact_title')}
+              </h3>
+              <p className="text-sm text-[#5a6270] dark:text-[#8b919d] leading-relaxed">
+                {t('contact_desc')}
+              </p>
+            </div>
+
+            <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
+              <input 
+                type="text" 
+                placeholder={t('full_name')}
+                className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
+              />
+              <input 
+                type="email" 
+                placeholder={t('email')}
+                className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
+              />
+              <textarea 
+                rows={3} 
+                placeholder={t('message')}
+                className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm resize-none transition-all duration-200"
+              ></textarea>
+              <button 
+                type="button" 
+                className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-mono text-xs font-bold px-6 py-3.5 rounded-sm self-start cursor-pointer hover:from-teal-600 hover:to-cyan-700 transition-all duration-200 shadow-md shadow-teal-500/20"
+              >
+                {t('transmit')}
+              </button>
+            </form>
+          </div>
+
+          {/* Brand System Info & Credentials */}
+          <div className="flex flex-col gap-6 bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-8 rounded-sm select-text hover:border-teal-500/50 transition-all duration-200 justify-between">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-1.5 border-b border-[#d3d8e2] dark:border-[#22252a] pb-4">
+                <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">// SYSTEM DIRECTORY</span>
+                <h3 className="text-xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">{t('directives_title')}</h3>
+              </div>
+              
+              <p className="text-[#5a6270] dark:text-[#8b919d] text-sm leading-relaxed mb-1">
+                THE BRAND OFFERS AN ARRAY OF TECHNICAL PIECES MEANT TO REDEFINE HIGH CONTRAST SILHOUETTES. EACH PIECE GOES THROUGH RAW TEXTILE FABRICATION.
+              </p>
+
+              <div className="flex flex-col gap-3 font-mono text-xs">
+                <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
+                  <span className="text-[#5a6270] dark:text-[#8b919d]">{t('system_version')}</span>
+                  <span className="text-[#0f1013] dark:text-[#e2e4e9] font-bold">1.0.4 // LATEST</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
+                  <span className="text-[#5a6270] dark:text-[#8b919d]">{t('office')}</span>
+                  <span className="text-[#0f1013] dark:text-[#e2e4e9] font-bold">TOKYO // CENTRAL STATION</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
+                  <span className="text-[#5a6270] dark:text-[#8b919d]">PROJECT EMAIL:</span>
+                  <span className="text-teal-600 dark:text-[#00b4d8] font-bold">support@utility.tm</span>
+                </div>
+              </div>
+            </div>
+
+            <button 
+              onClick={() => scrollToSection('hero')} 
+              className="font-mono text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer text-xs font-bold no-underline border-b border-dashed border-[#d3d8e2] dark:border-[#22252a] pb-0.5 self-start hover:text-teal-500 hover:border-teal-500 transition-all duration-200 mt-4"
+            >
+              BACK TO SYSTEM START ↑
+            </button>
+          </div>
         </div>
       </section>
 
