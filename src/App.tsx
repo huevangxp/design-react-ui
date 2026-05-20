@@ -25,7 +25,7 @@ function AppContent() {
 
   return (
     // Pure white page background in light mode (bg-white)
-    <div className="bg-white dark:bg-[#0c0d10] text-[#0f1013] dark:text-[#e2e4e9] font-sans antialiased tracking-tight min-h-screen transition-colors duration-300 selection:bg-teal-500 selection:text-white pb-16">
+    <div className="bg-white dark:bg-[#0c0d10] text-black dark:text-white font-sans antialiased tracking-tight min-h-screen transition-colors duration-300 selection:bg-teal-500 selection:text-white pb-16">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-10 flex flex-col gap-12 lg:gap-20">
         
         {/* Navigation */}
