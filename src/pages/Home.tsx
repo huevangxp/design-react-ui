@@ -48,13 +48,13 @@ export default function Home() {
             
             <button 
               onClick={() => scrollToSection('archive')} 
-              className="border border-[#d3d8e2] dark:border-[#22252a] text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer no-underline font-sans font-bold text-sm px-8 py-4 rounded-sm inline-flex items-center hover:bg-white dark:hover:bg-[#1d2026] hover:border-[#5a6270] dark:hover:border-[#8b919d] transition-all duration-200"
+              className="border border-zinc-200 dark:border-[#22252a] text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer no-underline font-sans font-bold text-sm px-8 py-4 rounded-sm inline-flex items-center hover:bg-[#f8fafc] dark:hover:bg-[#1d2026] hover:border-[#5a6270] dark:hover:border-[#8b919d] transition-all duration-200"
             >
               {t('explore_archive')}
             </button>
           </div>
 
-          <div className="flex gap-8 mt-4 border-t border-[#d3d8e2] dark:border-[#22252a] pt-8">
+          <div className="flex gap-8 mt-4 border-t border-zinc-200 dark:border-[#22252a] pt-8">
             <div className="flex flex-col gap-2">
               <span className="font-mono text-[11px] text-teal-600 dark:text-[#00b4d8] font-bold">01 /</span>
               <span className="text-xs font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wider flex items-center gap-1.5">
@@ -83,7 +83,7 @@ export default function Home() {
         
         {/* Right Content - Hero Visual */}
         <div className="flex flex-col gap-6 animate-zoom-in [animation-delay:400ms]">
-          <div className="relative bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-8 flex justify-center items-center overflow-hidden hover:border-[#5a6270] dark:hover:border-[#8b919d] group transition-all duration-300">
+          <div className="relative bg-zinc-50/50 dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] p-8 flex justify-center items-center overflow-hidden hover:border-[#5a6270] dark:hover:border-[#8b919d] group transition-all duration-300">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
               <span className="absolute top-4 left-4 font-mono text-sm font-light text-[#d3d8e2] dark:text-[#22252a]">+</span>
               <span className="absolute top-4 right-4 font-mono text-sm font-light text-[#d3d8e2] dark:text-[#22252a]">+</span>
@@ -128,7 +128,7 @@ export default function Home() {
 
       {/* 03 / Product Mini Grid Detail Card */}
       <section id="drops" className="flex flex-col gap-10 animate-fade-up">
-        <div className="flex flex-col md:flex-row justify-between md:items-center border-b border-[#d3d8e2] dark:border-[#22252a] pb-5 gap-4">
+        <div className="flex flex-col md:flex-row justify-between md:items-center border-b border-zinc-200 dark:border-[#22252a] pb-5 gap-4">
           <div className="font-mono text-sm font-bold text-[#0f1013] dark:text-[#e2e4e9] tracking-wide flex items-center">
             <span className="inline-block w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></span> // {t('product_highlight')}
           </div>
@@ -142,8 +142,8 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Card 1 */}
-          <div className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-6 flex flex-col sm:flex-row items-center gap-6 rounded-sm hover:border-teal-500/50 transition-all duration-300 group">
-            <div className="w-full sm:w-[160px] aspect-square overflow-hidden bg-[#e6e9ef] dark:bg-[#0c0d10] flex items-center justify-center border border-[#d3d8e2] dark:border-[#22252a] rounded-sm flex-shrink-0">
+          <div className="bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] p-6 flex flex-col sm:flex-row items-center gap-6 rounded-sm hover:shadow-lg hover:shadow-zinc-100 dark:hover:shadow-none hover:border-teal-500/50 transition-all duration-300 group">
+            <div className="w-full sm:w-[160px] aspect-square overflow-hidden bg-zinc-100/60 dark:bg-[#0c0d10] flex items-center justify-center border border-zinc-200 dark:border-[#22252a] rounded-sm flex-shrink-0">
               <img 
                 src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=300&q=80" 
                 alt="Product visual" 
@@ -158,7 +158,7 @@ export default function Home() {
                   RUGGED OFF-GRID TRAIL SNEAKER DESIGNED WITH AN OVERSIZED VIBRAM OUTSOLE AND TECHNICAL PULL ACCENTS.
                 </p>
               </div>
-              <div className="flex justify-between items-center border-t border-[#d3d8e2] dark:border-[#22252a] pt-3">
+              <div className="flex justify-between items-center border-t border-zinc-200 dark:border-[#22252a] pt-3">
                 <span className="font-mono text-sm font-bold text-teal-600 dark:text-[#00b4d8]">$195.00</span>
                 <button 
                   onClick={() => scrollToSection('info')} 
@@ -171,8 +171,8 @@ export default function Home() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-6 flex flex-col sm:flex-row items-center gap-6 rounded-sm hover:border-teal-500/50 transition-all duration-300 group">
-            <div className="w-full sm:w-[160px] aspect-square overflow-hidden bg-[#e6e9ef] dark:bg-[#0c0d10] flex items-center justify-center border border-[#d3d8e2] dark:border-[#22252a] rounded-sm flex-shrink-0">
+          <div className="bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] p-6 flex flex-col sm:flex-row items-center gap-6 rounded-sm hover:shadow-lg hover:shadow-zinc-100 dark:hover:shadow-none hover:border-teal-500/50 transition-all duration-300 group">
+            <div className="w-full sm:w-[160px] aspect-square overflow-hidden bg-zinc-100/60 dark:bg-[#0c0d10] flex items-center justify-center border border-zinc-200 dark:border-[#22252a] rounded-sm flex-shrink-0">
               <img 
                 src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" 
                 alt="Product visual" 
@@ -187,7 +187,7 @@ export default function Home() {
                   WATER RESISTANT COATING COMPLETE WITH INDUSTRIAL SLING ATTACHMENTS AND 4 ZIP COMPARTMENTS.
                 </p>
               </div>
-              <div className="flex justify-between items-center border-t border-[#d3d8e2] dark:border-[#22252a] pt-3">
+              <div className="flex justify-between items-center border-t border-zinc-200 dark:border-[#22252a] pt-3">
                 <span className="font-mono text-sm font-bold text-teal-600 dark:text-[#00b4d8]">$220.00</span>
                 <button 
                   onClick={() => scrollToSection('info')} 
@@ -202,7 +202,7 @@ export default function Home() {
       </section>
 
       {/* 03.5 / Archive Section */}
-      <section id="archive" className="border-t border-b border-[#d3d8e2] dark:border-[#22252a] py-16 animate-fade-up select-none">
+      <section id="archive" className="border-t border-b border-[#e2e8f0] dark:border-[#22252a] py-16 animate-fade-up select-none">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center">
           <div className="flex flex-col gap-5">
             <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold tracking-wider flex items-center gap-1">
@@ -215,11 +215,11 @@ export default function Home() {
             <p className="text-[#5a6270] dark:text-[#8b919d] text-[15px] leading-relaxed">
               {t('archive_desc')}
             </p>
-            <button onClick={() => scrollToSection('drops')} className="font-mono text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer text-xs font-bold no-underline border-b border-dashed border-[#d3d8e2] dark:border-[#22252a] pb-0.5 self-start hover:text-teal-600 hover:border-teal-500 dark:hover:text-[#00b4d8] dark:hover:border-[#00b4d8] transition-all duration-200 bg-transparent">
+            <button onClick={() => scrollToSection('drops')} className="font-mono text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer text-xs font-bold no-underline border-b border-dashed border-zinc-200 dark:border-[#22252a] pb-0.5 self-start hover:text-teal-600 hover:border-teal-500 dark:hover:text-[#00b4d8] dark:hover:border-[#00b4d8] transition-all duration-200 bg-transparent">
               {t('learn_more')}
             </button>
           </div>
-          <div className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-4 animate-zoom-in [animation-delay:200ms]">
+          <div className="bg-zinc-50/50 dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] p-4 animate-zoom-in [animation-delay:200ms]">
             <img 
               src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80" 
               alt="Urban Architecture / Street Style" 
@@ -241,7 +241,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-6 hover:border-teal-500/50 transition-all duration-200 rounded-sm">
+          <div className="bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] p-6 hover:shadow-md hover:shadow-zinc-100 dark:hover:shadow-none hover:border-teal-500/50 transition-all duration-200 rounded-sm">
             <h4 className="font-mono font-bold text-sm text-teal-600 dark:text-[#00b4d8] mb-2 flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
               {t('faq_1_q')}
@@ -251,7 +251,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-6 hover:border-teal-500/50 transition-all duration-200 rounded-sm">
+          <div className="bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] p-6 hover:shadow-md hover:shadow-zinc-100 dark:hover:shadow-none hover:border-teal-500/50 transition-all duration-200 rounded-sm">
             <h4 className="font-mono font-bold text-sm text-teal-600 dark:text-[#00b4d8] mb-2 flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
               {t('faq_2_q')}
@@ -263,7 +263,7 @@ export default function Home() {
         </div>
 
         {/* Contact form & Credentials */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-[#d3d8e2]/60 dark:border-[#22252a]/60 pt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-[#e2e8f0] dark:border-[#22252a]/60 pt-12">
           {/* Contact Directive Form */}
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
@@ -282,17 +282,17 @@ export default function Home() {
               <input 
                 type="text" 
                 placeholder={t('full_name')}
-                className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
+                className="bg-zinc-50/50 focus:bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
               />
               <input 
                 type="email" 
                 placeholder={t('email')}
-                className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
+                className="bg-zinc-50/50 focus:bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm transition-all duration-200"
               />
               <textarea 
                 rows={3} 
                 placeholder={t('message')}
-                className="bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm resize-none transition-all duration-200"
+                className="bg-zinc-50/50 focus:bg-white dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] focus:border-teal-500 dark:focus:border-[#00b4d8] px-4 py-3 font-mono text-xs outline-none text-[#0f1013] dark:text-[#e2e4e9] rounded-sm resize-none transition-all duration-200"
               ></textarea>
               <button 
                 type="button" 
@@ -304,9 +304,9 @@ export default function Home() {
           </div>
 
           {/* Brand System Info & Credentials */}
-          <div className="flex flex-col gap-6 bg-white dark:bg-[#14161b] border border-[#d3d8e2] dark:border-[#22252a] p-8 rounded-sm select-text hover:border-teal-500/50 transition-all duration-200 justify-between">
+          <div className="flex flex-col gap-6 bg-zinc-50/40 dark:bg-[#14161b] border border-zinc-200 dark:border-[#22252a] p-8 rounded-sm select-text hover:border-teal-500/50 hover:shadow-md hover:shadow-zinc-100 dark:hover:shadow-none transition-all duration-200 justify-between">
             <div className="flex flex-col gap-4">
-              <div className="flex flex-col gap-1.5 border-b border-[#d3d8e2] dark:border-[#22252a] pb-4">
+              <div className="flex flex-col gap-1.5 border-b border-zinc-200 dark:border-[#22252a] pb-4">
                 <span className="font-mono text-xs text-teal-600 dark:text-[#00b4d8] font-bold">// SYSTEM DIRECTORY</span>
                 <h3 className="text-xl font-black text-[#0f1013] dark:text-[#e2e4e9] tracking-tight">{t('directives_title')}</h3>
               </div>
@@ -316,24 +316,29 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col gap-3 font-mono text-xs">
-                <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
+                <div className="flex justify-between items-center border-b border-dashed border-zinc-200 dark:border-[#1d2026] pb-2.5">
                   <span className="text-[#5a6270] dark:text-[#8b919d]">{t('system_version')}</span>
                   <span className="text-[#0f1013] dark:text-[#e2e4e9] font-bold">1.0.4 // LATEST</span>
                 </div>
-                <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
+                <div className="flex justify-between items-center border-b border-dashed border-zinc-200 dark:border-[#1d2026] pb-2.5">
                   <span className="text-[#5a6270] dark:text-[#8b919d]">{t('office')}</span>
                   <span className="text-[#0f1013] dark:text-[#e2e4e9] font-bold">TOKYO // CENTRAL STATION</span>
                 </div>
-                <div className="flex justify-between items-center border-b border-dashed border-[#e6e9ef] dark:border-[#1d2026] pb-2.5">
+                <div className="flex justify-between items-center border-b border-dashed border-zinc-200 dark:border-[#1d2026] pb-2.5">
                   <span className="text-[#5a6270] dark:text-[#8b919d]">PROJECT EMAIL:</span>
                   <span className="text-teal-600 dark:text-[#00b4d8] font-bold">support@utility.tm</span>
                 </div>
               </div>
             </div>
 
+            <div className="border border-zinc-200 dark:border-[#22252a] bg-white dark:bg-[#0c0d10] p-4 mt-2 font-mono text-[11px] text-[#5a6270] dark:text-[#8b919d] leading-relaxed rounded-sm select-none flex gap-3 items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-600 flex-shrink-0 mt-0.5"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span>{t('disclaimer')}</span>
+            </div>
+
             <button 
               onClick={() => scrollToSection('hero')} 
-              className="font-mono text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer text-xs font-bold no-underline border-b border-dashed border-[#d3d8e2] dark:border-[#22252a] pb-0.5 self-start hover:text-teal-500 hover:border-teal-500 transition-all duration-200 mt-4"
+              className="font-mono text-[#0f1013] dark:text-[#e2e4e9] cursor-pointer text-xs font-bold no-underline border-b border-dashed border-zinc-200 dark:border-[#22252a] pb-0.5 self-start hover:text-teal-500 hover:border-teal-500 transition-all duration-200 mt-4"
             >
               BACK TO SYSTEM START ↑
             </button>
