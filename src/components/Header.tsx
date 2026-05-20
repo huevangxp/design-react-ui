@@ -3,17 +3,26 @@ import { useTranslation } from '../context/LanguageContext';
 interface HeaderProps {
   isDarkMode: boolean;
   setIsDarkMode: (isDark: boolean) => void;
-  currentPage: string;
-  setCurrentPage: (page: string) => void;
 }
 
-export default function Header({ isDarkMode, setIsDarkMode, currentPage, setCurrentPage }: HeaderProps) {
+export default function Header({ isDarkMode, setIsDarkMode }: HeaderProps) {
   const { language, setLanguage, t } = useTranslation();
+
+  const scrollToSection = (id: string) => {
+    if (id === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <header className="flex justify-between items-center py-6 border-b border-[#d3d8e2] dark:border-[#22252a] font-mono text-[13px] animate-fade-up">
       <div 
-        onClick={() => setCurrentPage('HOME')}
+        onClick={() => scrollToSection('home')}
         className="font-extrabold text-base tracking-tight text-[#0f1013] dark:text-[#e2e4e9] flex items-center gap-2 cursor-pointer select-none hover:scale-105 transition-all duration-200"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><rect width="8" height="8" x="2" y="2" rx="1"/><rect width="8" height="8" x="14" y="2" rx="1"/><rect width="8" height="8" x="2" y="14" rx="1"/><rect width="8" height="8" x="14" y="14" rx="1"/></svg>
@@ -21,34 +30,26 @@ export default function Header({ isDarkMode, setIsDarkMode, currentPage, setCurr
       </div>
       <nav className="hidden md:flex gap-8">
         <button 
-          onClick={() => setCurrentPage('HOME')} 
-          className={`cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] ${
-            currentPage === 'HOME' ? 'text-teal-600 dark:text-[#00b4d8] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
-          }`}
+          onClick={() => scrollToSection('home')} 
+          className="cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] text-[#5a6270] dark:text-[#8b919d] hover:text-teal-600 dark:hover:text-[#00b4d8]"
         >
           {t('home')}
         </button>
         <button 
-          onClick={() => setCurrentPage('DROPS')} 
-          className={`cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] ${
-            currentPage === 'DROPS' ? 'text-teal-600 dark:text-[#00b4d8] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
-          }`}
+          onClick={() => scrollToSection('drops')} 
+          className="cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] text-[#5a6270] dark:text-[#8b919d] hover:text-teal-600 dark:hover:text-[#00b4d8]"
         >
           {t('drops')}
         </button>
         <button 
-          onClick={() => setCurrentPage('ARCHIVE')} 
-          className={`cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] ${
-            currentPage === 'ARCHIVE' ? 'text-teal-600 dark:text-[#00b4d8] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
-          }`}
+          onClick={() => scrollToSection('archive')} 
+          className="cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] text-[#5a6270] dark:text-[#8b919d] hover:text-teal-600 dark:hover:text-[#00b4d8]"
         >
           {t('archive')}
         </button>
         <button 
-          onClick={() => setCurrentPage('INFO')} 
-          className={`cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] ${
-            currentPage === 'INFO' ? 'text-teal-600 dark:text-[#00b4d8] font-bold' : 'text-[#5a6270] dark:text-[#8b919d] hover:text-[#0f1013] dark:hover:text-[#e2e4e9]'
-          }`}
+          onClick={() => scrollToSection('info')} 
+          className="cursor-pointer transition-colors duration-200 border-none bg-transparent font-mono text-[13px] text-[#5a6270] dark:text-[#8b919d] hover:text-teal-600 dark:hover:text-[#00b4d8]"
         >
           {t('info')}
         </button>
